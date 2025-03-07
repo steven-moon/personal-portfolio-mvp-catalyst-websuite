@@ -9,6 +9,34 @@ This project consists of two main components:
 1. **Frontend**: A modern React application with TypeScript, Vite, TailwindCSS, and shadcn/ui components featuring neumorphic design
 2. **Backend**: A secure Node.js Express API with Sequelize ORM, MySQL database, and JWT authentication
 
+## 🐳 Development
+
+This development environment uses Docker Compose to set up multiple containers on your development machine. These containers are self-contained Linux installations with their own IP addresses within their own private network. The following containers are defined in the `docker-compose.yml`:
+
+- **nginx:** A webserver that routes traffic between frontend and backend. This runs on port 80 in the container, which is mapped to port 9090 on your development machine (the host). Any traffic it receives at `/api` will be routed to the **backend** server, and all other traffic will be routed to the **frontend** server.
+- **frontend:** A React development server running with Vite. It has the `frontend/` folder in this repository mapped to its own `/app` directory, enabling live reloading during development.
+- **backend:** A Node.js Express server. It has the `backend/` folder mapped to its own `/app` directory.
+- **db:** A MySQL instance used by **backend** for database storage.
+
+The `frontend/` and `backend/` folders in this repository are git submodules and must be initialized as such. Since they are mapped to filesystem locations on the Docker containers, any changes you make in these local folders will be immediately reflected on the Docker container, providing a seamless development experience.
+
+### Installation
+
+```bash
+git clone git@github.com:stevenmoon/personal-portfolio-websuite.git --recurse-submodules
+```
+
+### Starting the Development Environment
+
+```bash
+docker-compose up
+```
+
+You can then access:
+- Frontend: http://localhost:9090
+- Backend API (via Nginx): http://localhost:9090/api
+- Backend API (direct access): http://localhost:3000
+
 ## 📋 Main Features
 
 - **Modern Portfolio Showcase**: Display projects, skills, and personal information
