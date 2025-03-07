@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:steven-moon/personal-portfolio-mvp-catalyst-prototype.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:steven-moon/personal-portfolio-mvp-catalyst-backend
