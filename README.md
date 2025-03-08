@@ -47,6 +47,81 @@ You can then access:
 - **API Integration**: Structured API for all data operations
 - **Neumorphic UI**: Soft, elegant user interface with subtle shadows and transitions
 
+## 📝 Git Commit Conventions
+
+When contributing to this project, please use the following commit message format to maintain consistency and clarity in the git history.
+
+```
+<type>(<scope>): <subject>
+// blank line
+<body>
+// blank line
+<footer>
+```
+
+### Commit Structure
+
+- **Header** is mandatory, while **Body** and **Footer** are optional
+- No line should exceed 72 characters to avoid automatic line breaks
+
+### Types
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Formatting changes - no code change
+- `refactor`: Code refactoring
+- `perf`: Performance improvements
+- `test`: Adding/updating tests
+- `chore`: Build process or tool changes
+- `ui`: UI/design updates
+- `api`: API-related changes
+- `db`: Database schema/query changes
+- `auth`: Authentication/authorization changes
+
+### Scopes (Project-Specific)
+
+- `frontend`: Frontend application changes
+- `backend`: Backend server changes
+- `api`: API endpoints
+- `db`: Database models/migrations
+- `auth`: Authentication
+- `docker`: Docker configuration
+- `admin`: Admin dashboard
+- `portfolio`: Portfolio section
+- `blog`: Blog functionality
+- `ui`: User interface components
+- `config`: Configuration files
+- `deps`: Dependencies
+
+### Examples
+
+```
+feat(blog): Add comment system to blog posts
+
+Implement a nested comment system for blog posts with real-time updates.
+The system includes:
+- User avatar integration
+- Markdown support
+- Notification system
+
+Closes #123
+```
+
+```
+fix(auth): Resolve JWT token expiration issue
+
+Fixed bug where expired tokens were still being accepted by the API.
+Added token refresh mechanism and improved error messages.
+```
+
+```
+refactor(frontend): Convert class components to functional
+
+Converted remaining class components to use React hooks for better performance
+and code consistency.
+```
+
 ## 🛠️ Technology Stack
 
 - **Frontend**:
